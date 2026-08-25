@@ -1,14 +1,12 @@
 import gradio as gr
 import os
 
-
 def get_image_size(image):
     if image is None:
         return "No image uploaded."
     size_bytes = os.path.getsize(image)
     size_mb = size_bytes / (1024 * 1024)
     return f"Image size: {size_mb:.4f} MB"
-
 
 with gr.Blocks() as demo:
     image_input = gr.File(
@@ -22,3 +20,6 @@ with gr.Blocks() as demo:
 
 if __name__ == "__main__":
     demo.launch()
+
+server_port = int(os.environ.get("AWS_LAMBDA_HTTP_PORT", 8080))
+demo.launch(server_name="0.0.0.0", server_port=server_port)

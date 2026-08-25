@@ -3,8 +3,8 @@ version: 0.2
   env:
     variables:
       AWS_REGION: "us-east-2"
-      AWS_ACCOUNT_ID: "<your-account-id>"
-      IMAGE_REPO_NAME: "production/gradio-demo"
+      AWS_ACCOUNT_ID: "1475-1974-0336"
+      IMAGE_REPO_NAME: "sciapps/gradio_demo"
       IMAGE_TAG: "latest"
 
   phases:
